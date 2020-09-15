@@ -1,7 +1,7 @@
 {
   "name": "@oddx/pubsub",
   "private": false,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lightweight PubSub (4kb) for Browser and Node.js",
   "main": "dist/index.js",
   "scripts": {
