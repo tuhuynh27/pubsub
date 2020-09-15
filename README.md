@@ -53,7 +53,7 @@ function subscriber() {
 ## Usage for Deno
 
 ```typescript
-import usePubSub from "https://raw.githubusercontent.com/oddx-team/pubsub/master/src/index.ts";
+import { usePubSub } from "https://raw.githubusercontent.com/oddx-team/pubsub/master/src/index.ts";
 
 const eventBus = usePubSub();
 ```
