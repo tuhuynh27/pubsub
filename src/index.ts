@@ -19,12 +19,22 @@ export function usePubSub(): PubSub {
             events[event].splice(index, 1)
         }
     }
-    return { publish, subscribe }
+    function clearAllSubscriptions(event: string): void {
+        if (!event) return
+        events[event] = []
+    }
+    function countSubscription(event: string): number {
+        if (!event || !events[event]) return 0
+        return events[event].length
+    }
+    return { publish, subscribe, clearAllSubscriptions, countSubscription }
 }
 
 export interface PubSub {
     publish (event: string, ...data: PubSubData[]): void
     subscribe (event: string, callback: PubSubHandler): PubSubUnsubscribe
+    clearAllSubscriptions(event: string): void
+    countSubscription(event: string): number
 }
 
 export type PubSubData = string | number | Record<any, any> | string[] | number[] |  any

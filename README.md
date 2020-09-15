@@ -55,6 +55,12 @@ function subscriber() {
         unsubscribe()
     }, 3000)
 }
+
+// Clear all subscribers
+eventBus.clearAllSubscriptions('hello')
+
+// Count all subscribers
+const count = eventBus.countSubscription('hello') // count === number
 ```
 
 ## Usage for Deno

@@ -23,7 +23,17 @@ function usePubSub() {
             events[event].splice(index, 1);
         };
     }
-    return { publish: publish, subscribe: subscribe };
+    function clearAllSubscriptions(event) {
+        if (!event)
+            return;
+        events[event] = [];
+    }
+    function countSubscription(event) {
+        if (!event || !events[event])
+            return 0;
+        return events[event].length;
+    }
+    return { publish: publish, subscribe: subscribe, clearAllSubscriptions: clearAllSubscriptions, countSubscription: countSubscription };
 }
 exports.usePubSub = usePubSub;
 exports.default = usePubSub;
