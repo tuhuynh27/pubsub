@@ -1,7 +1,7 @@
 {
   "name": "@oddx/pubsub",
   "private": false,
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lightweight PubSub (4kb) for Browser and Node.js",
   "main": "dist/index.js",
   "scripts": {
@@ -18,5 +18,7 @@
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   },
-  "keywords": ["pubsub", "event-bus"]
+  "keywords": ["pubsub", "event-bus"],
+  "repository": "https://github.com/oddx-team/pubsub/",
+  "homepage": "https://github.com/oddx-team/pubsub/"
 }
