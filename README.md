@@ -1,6 +1,8 @@
 ![Node CI](https://github.com/oddx-team/pubsub/workflows/Node%20CI/badge.svg)
 
-# Lightweight PubSub (4KB)
+# Lightweight PubSub (4KBs)
+
+Lightweight PubSub (4KBs) use for Browser and Node.js
 
 ## Development
 
@@ -17,13 +19,13 @@ npm run test:unit
 ## Install
 
 ```bash
-npm install oddx/pubsub
+npm install @oddx/pubsub
 ```
 
 ## Usage
 
-```javascript
-import usePubsub from 'oddx/pubsub'
+```typescript
+import usePubsub from '@oddx/pubsub'
 
 const eventBus = usePubsub()
 
@@ -46,4 +48,12 @@ function subscriber() {
         unsubscribe()
     }, 3000)
 }
+```
+
+## Usage for Deno
+
+```typescript
+import usePubSub from "https://raw.githubusercontent.com/oddx-team/pubsub/master/src/index.ts";
+
+const eventBus = usePubSub();
 ```
