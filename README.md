@@ -1,3 +1,5 @@
+![Node CI](https://github.com/oddx-team/pubsub/workflows/Node%20CI/badge.svg)
+
 # Lightweight PubSub (4KB)
 
 ## Development
