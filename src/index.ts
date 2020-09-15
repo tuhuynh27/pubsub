@@ -8,7 +8,7 @@ function usePubSub(): PubSub {
                 (callback: PubSubHandler) => callback(...data))
     }
     function subscribe (event: string, callback: PubSubHandler): PubSubUnsubscribe {
-        if (!events[event] || !Array.isArray(events[event])) {
+        if (!events[event]) {
             events[event] = []
         }
 

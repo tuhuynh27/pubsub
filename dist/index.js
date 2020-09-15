@@ -7,7 +7,7 @@ function usePubSub() {
             .forEach((callback) => callback(...data));
     }
     function subscribe(event, callback) {
-        if (!events[event] || !Array.isArray(events[event])) {
+        if (!events[event]) {
             events[event] = [];
         }
         events[event].push(callback);
