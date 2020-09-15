@@ -1,4 +1,4 @@
-function usePubSub() {
+export function usePubSub() {
     const events = Object.create(null);
     function publish(event, ...data) {
         if (!events[event])
