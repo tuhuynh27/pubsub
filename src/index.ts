@@ -1,4 +1,4 @@
-export function usePubSub(): PubSub {
+export function usePubSub (): PubSub {
     const events: Record<string, PubSubHandler[]> = Object.create(null)
     function publish (event: string, ...data: PubSubData[]): void {
         if (!events[event]) return
@@ -33,6 +33,8 @@ export function usePubSub(): PubSub {
 export interface PubSub {
     publish (event: string, ...data: PubSubData[]): void
     subscribe (event: string, callback: PubSubHandler): PubSubUnsubscribe
+    subscribeOnce? (event: string, callback: PubSubHandler): void // Todo
+    subscribeAll? (callback: PubSubHandler): void // Todo
     clearAllSubscriptions (event: string): void
     countSubscription (event: string): number
 }
