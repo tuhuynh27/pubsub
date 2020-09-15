@@ -1,14 +1,14 @@
 {
   "name": "pubsub",
-  "version": "0.1.0",
-  "description": "Pubsub module",
+  "version": "1.0.0",
+  "description": "Lightweight PubSub (4kb) for Browser and Node.js",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test:unit": "jest tests",
     "test:coverage": "jest tests --coverage"
   },
-  "author": "",
+  "author": "Oddx Team",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
