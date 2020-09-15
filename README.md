@@ -1,13 +1,13 @@
 ![Node CI](https://github.com/oddx-team/pubsub/workflows/Node%20CI/badge.svg)
 
-# Lightweight PubSub (1KB)
+# Lightweight PubSub (335 Bytes)
 
-Lightweight (1KB) publish/subscribe library written in TypeScript, use for Browser and Node.js / Deno
+Lightweight (335 Bytes gzipped) publish/subscribe library written in TypeScript, use for Browser and Node.js / Deno
 
 ## Features
 
 - No dependency
-- Light-weighted, less than 1kb minified and gzipped
+- Light-weighted, just 335 Bytes (less than 1KB) minified and gzipped
 - TypeScript with types
 - Functional style with Closure
 
