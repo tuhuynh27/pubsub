@@ -38,6 +38,10 @@ function subscriber() {
         console.log(d2)
     })
 
+    eventBus.subscribeOnce('hello', (d1: string) => {
+        console.log(d1)
+    })
+
     setTimeout(() => {
         unsubscribe()
     }, 3000)
