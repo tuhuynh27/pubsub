@@ -8,3 +8,4 @@ jest.config.js
 .gitignore
 .npmignore
 tsconfig.json
+README.md

@@ -15,7 +15,7 @@ export function usePubSub (): PubSub {
         events[event].push(callback)
 
         const index = events[event].length - 1
-        return function() {
+        return function () {
             events[event].splice(index, 1)
         }
     }
@@ -39,7 +39,7 @@ export interface PubSub {
     countSubscription (event: string): number
 }
 
-export type PubSubData = string | number | Record<any, any> | string[] | number[] |  any
+export type PubSubData = string | number | Record<any, any> | string[] | number[] | any
 
 export type PubSubHandler = (...data: PubSubData[]) => void
 export type PubSubUnsubscribe = () => void
