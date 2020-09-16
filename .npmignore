@@ -9,3 +9,4 @@ jest.config.js
 .npmignore
 tsconfig.json
 README.md
+pnpm-lock.yaml
