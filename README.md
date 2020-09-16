@@ -1,27 +1,15 @@
 ![Node CI](https://github.com/oddx-team/pubsub/workflows/Node%20CI/badge.svg)
 
-# Lightweight PubSub (335 Bytes)
+# Tiny PubSub (0.3KB)
 
 Lightweight (335 Bytes gzipped) publish/subscribe library written in TypeScript, use for Browser and Node.js / Deno
 
 ## Features
 
 - No dependency
-- Light-weighted, just 335 Bytes (less than 1KB) minified and gzipped
-- TypeScript with types
+- Tiny size, just 335 Bytes (less than 1KB) minified and gzipped
+- TypeScript with static types
 - Functional style with Closure
-
-## Development
-
-Build:
-```bash
-npm run build
-```
-
-Run tests:
-```bash
-npm run test:unit
-```
 
 ## Install
 
@@ -32,23 +20,22 @@ npm install @oddx/pubsub
 ## Usage
 
 ```typescript
-import usePubsub from '@oddx/pubsub'
+import usePubSub from '@oddx/pubsub'
 
-const eventBus = usePubsub()
+const eventBus = usePubSub()
 
 function publisher() {
     let count = 0
     setInterval(() => {
-        eventBus.publish('hello', 'world', 'here', count)
+        eventBus.publish('hello', count)
         count += 1
     }, 1000)
 }
 
 function subscriber() {
-    const unsubscribe = eventBus.subscribe('hello', (d1: string, d2: string, d3: number) => {
+    const unsubscribe = eventBus.subscribe('hello', (d1: string, d2: number) => {
         console.log(d1)
         console.log(d2)
-        console.log(d3)
     })
 
     setTimeout(() => {
@@ -60,7 +47,7 @@ function subscriber() {
 eventBus.clearAllSubscriptions('hello')
 
 // Count all subscribers
-const count = eventBus.countSubscription('hello') // count === number
+const count = eventBus.countSubscription('hello') // count: number
 ```
 
 ## Usage for Deno
