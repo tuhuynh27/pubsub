@@ -38,6 +38,10 @@ function subscriber() {
         console.log(d2)
     })
 
+    eventBus.subscribeOnce('hello', (d1: string) => {
+        console.log(d1)
+    })
+
     setTimeout(() => {
         unsubscribe()
     }, 3000)
@@ -53,7 +57,14 @@ const count = eventBus.countSubscription('hello') // count: number
 ## Usage for Deno
 
 ```typescript
-import { usePubSub } from "https://raw.githubusercontent.com/oddx-team/pubsub/master/src/index.ts";
+import usePubSub from 'https://raw.githubusercontent.com/oddx-team/pubsub/master/src/index.ts'
 
-const eventBus = usePubSub();
+const eventBus = usePubSub()
+eventBus.subscribe('time', (data: number) => {
+  console.log(data)
+})
+
+setInterval(() => {
+  eventBus.publish('time', new Date().getTime())
+}, 100)
 ```
