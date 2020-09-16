@@ -45,7 +45,6 @@ export interface PubSub {
     publish (event: string, ...data: PubSubData[]): void
     subscribe (event: string, callback: PubSubHandler): PubSubUnsubscribe
     subscribeOnce (event: string, callback: PubSubHandler): void
-    subscribeAll? (callback: PubSubHandler): void // Todo
     clearAllSubscriptions (event: string): void
     countSubscription (event: string): number
 }
