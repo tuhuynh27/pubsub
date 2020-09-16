@@ -1,4 +1,4 @@
-export declare function usePubSub(): PubSub;
+declare function usePubSub(): PubSub;
 export interface PubSub {
     publish(event: string, ...data: PubSubData[]): void;
     subscribe(event: string, callback: PubSubHandler): PubSubUnsubscribe;

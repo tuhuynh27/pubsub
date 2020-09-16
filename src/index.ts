@@ -1,4 +1,4 @@
-export function usePubSub (): PubSub {
+function usePubSub (): PubSub {
     const events: Record<string, PubSubHandler[]> = Object.create(null)
     function publish (event: string, ...data: PubSubData[]): void {
         if (!events[event]) return

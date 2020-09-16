@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.usePubSub = void 0;
 function usePubSub() {
     var events = Object.create(null);
     function publish(event) {
@@ -52,5 +51,4 @@ function usePubSub() {
     }
     return { publish: publish, subscribe: subscribe, subscribeOnce: subscribeOnce, clearAllSubscriptions: clearAllSubscriptions, countSubscription: countSubscription };
 }
-exports.usePubSub = usePubSub;
 exports.default = usePubSub;
