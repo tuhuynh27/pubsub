@@ -14,13 +14,13 @@ Lightweight (335 Bytes gzipped) publish/subscribe library written in TypeScript,
 ## Install
 
 ```bash
-npm install @oddx/pubsub
+npm install @reactif/pubsub
 ```
 
 ## Usage
 
 ```typescript
-import usePubSub from '@oddx/pubsub'
+import usePubSub from '@reactif/pubsub'
 
 const eventBus = usePubSub()
 

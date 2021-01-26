@@ -5,16 +5,20 @@ function usePubSub (): PubSub {
 
         events[event]
             .forEach(
-                (callback: PubSubHandler) => callback(...data))
+                (callback: PubSubHandler) => {
+                    if (callback) {
+                        callback(...data)
+                    }
+                })
     }
     function subscribe (event: string, callback: PubSubHandler): PubSubUnsubscribe {
         if (!events[event]) {
             events[event] = []
         }
+        const index = events[event].length
         events[event].push(callback)
-        const index = events[event].length - 1
         return function () {
-            events[event].splice(index, 1)
+            events[event][index] = null
         }
     }
     function subscribeOnce (event: string, callback: PubSubHandler): void {
@@ -23,7 +27,7 @@ function usePubSub (): PubSub {
         }
         const index = events[event].length
         function unsubscribe () {
-            events[event].splice(index, 1)
+            events[event][index] = null
         }
         events[event].push((...data: PubSubData) => {
             callback(...data)
